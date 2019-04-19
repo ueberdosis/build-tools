@@ -1,6 +1,6 @@
 # Build Tools
 
-Docker image with CI/CD tools
+Docker image with useful CI/CD tools
 
 ## Dependency
 
