@@ -1,6 +1,7 @@
 FROM docker:git
 
 ENV DOCKER_COMPOSE_VERSION "1.24.0"
+ENV COMPOSE_INTERACTIVE_NO_CLI "true"
 
 # Install essentials
 RUN apk add --no-cache \
