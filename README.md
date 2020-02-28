@@ -2,7 +2,16 @@
 
 Docker image with useful CI/CD tools
 
-## Dependency
+## Tools included
+
+- bash
+- Docker
+- Docker Compose
+- openssl
+- rsync
+- sshpass
+
+## Dependencies
 
 Docker
 
@@ -10,5 +19,7 @@ Docker
 
 ```
 docker image build -t ueberdosis/build-tools .
+docker container run ueberdosis/build-tools docker version
+docker container run ueberdosis/build-tools docker-compose version
 docker container run ueberdosis/build-tools git help
 ```
