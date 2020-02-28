@@ -15,6 +15,5 @@ COPY --from=aquasec/trivy /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # Override entrypoint of compose image
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-ENTRYPOINT ["/bin/sh", "/docker-entrypoint.sh"]
-CMD [""]
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
