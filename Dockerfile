@@ -10,5 +10,9 @@ RUN apk add --no-cache \
     rsync \
     sshpass
 
+# Install trivy
+COPY --from=aquasec/trivy /usr/local/bin/trivy /usr/local/bin/trivy
+RUN chmod +x /usr/local/bin/trivy
+
 # Override entrypoint of compose image
 ENTRYPOINT []
