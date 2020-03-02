@@ -7,6 +7,7 @@ ENV COMPOSE_INTERACTIVE_NO_CLI "true"
 RUN apk add --no-cache \
     bash \
     openssl \
+    openssh-client \
     rsync \
     sshpass
 
