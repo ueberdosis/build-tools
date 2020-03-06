@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     sshpass
 
 # Install trivy
-COPY --from=aquasec/trivy:0.5.0 /usr/local/bin/trivy /usr/local/bin/trivy
+COPY --from=aquasec/trivy:0.5.1 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # Override entrypoint of compose image
