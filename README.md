@@ -7,9 +7,12 @@ Docker image with useful CI/CD tools
 - bash
 - Docker
 - Docker Compose
+- git
 - openssl
 - rsync
+- Sonnar Scanner
 - sshpass
+- trivy
 
 ## Dependencies
 
