@@ -8,6 +8,7 @@ ENV SONAR_SCANNER_VERSION "4.3.0.2102"
 RUN apt-get update && \
     apt-get install -y \
     bash \
+    git \
     openssl \
     openssh-client \
     rsync \
