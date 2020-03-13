@@ -1,4 +1,4 @@
-# Build Tools
+# 🛠️ Build Tools
 
 Docker image with useful CI/CD tools
 
@@ -20,9 +20,12 @@ Docker
 
 ## Usage
 
+Use specific tag instead of `latest`. See Docker Hub
+
 ```
-docker image build -t ueberdosis/build-tools .
-docker container run ueberdosis/build-tools docker version
-docker container run ueberdosis/build-tools docker-compose version
-docker container run ueberdosis/build-tools git help
+docker container run ueberdosis/build-tools:latest docker version
+docker container run ueberdosis/build-tools:latest docker-compose version
+docker container run ueberdosis/build-tools:latest git help
+docker container run ueberdosis/build-tools:latest sonar-scanner --version
+docker container run ueberdosis/build-tools:latest trivy --version
 ```
