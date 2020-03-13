@@ -10,7 +10,9 @@ Docker image with useful CI/CD tools
 - git
 - openssl
 - rsync
+- Sonnar Scanner
 - sshpass
+- trivy
 
 ## Dependencies
 
