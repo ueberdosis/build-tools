@@ -7,6 +7,7 @@ ENV SONAR_SCANNER_VERSION "4.3.0.2102"
 # Install essentials
 RUN apk add --no-cache \
     bash \
+    git \
     openssl \
     openssh-client \
     rsync \
