@@ -16,7 +16,7 @@ RUN apk add --no-cache \
     wget
 
 # Install Trivy
-COPY --from=aquasec/trivy:0.5.4 /usr/local/bin/trivy /usr/local/bin/trivy
+COPY --from=aquasec/trivy:0.6.0 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # Install SonarScanner
