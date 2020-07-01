@@ -1,4 +1,4 @@
-FROM docker/compose:alpine-1.26.0
+FROM docker/compose:alpine-1.26.1
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
 ENV COMPOSE_INTERACTIVE_NO_CLI "true"
