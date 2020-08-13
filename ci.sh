@@ -130,6 +130,7 @@ if [ $# -gt 0 ]; then
         eval $(ssh-agent -s)
         echo "$SSH_KEY" | tr -d '\r' | ssh-add -
         mkdir -p ~/.ssh && chmod 700 ~/.ssh
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
         echo "$SSH_FINGERPRINT" > ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
 
     # ci secrets
