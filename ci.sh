@@ -128,7 +128,7 @@ if [ $# -gt 0 ]; then
         fi
 
         eval $(ssh-agent -s)
-        echo "$SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+        echo "$SSH_KEY" | tr -d '\r' | ssh-add -
         mkdir -p ~/.ssh && chmod 700 ~/.ssh
         echo "$SSH_FINGERPRINT" > ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
 
