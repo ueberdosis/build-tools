@@ -140,9 +140,9 @@ if [ $# -gt 0 ]; then
 
         # define secret env vars that will be hashed and saved to files in order
         # to be used with docker secrets
-        SECRET_ENV_VARS=${SECRET_ENV_VARS:-( "LARAVEL_ENV" "MYSQL_ROOT_PASSWORD" "MYSQL_DATABASE" "MYSQL_USER" "MYSQL_PASSWORD" )}
+        SECRET_ENV_VARS=${SECRET_ENV_VARS:-"LARAVEL_ENV,MYSQL_ROOT_PASSWORD,MYSQL_DATABASE,MYSQL_USER,MYSQL_PASSWORD"}
 
-        for SECRET_ENV_VAR in "${SECRET_ENV_VARS[@]}"; do
+        IFS=',' ; for SECRET_ENV_VAR in `echo "$SECRET_ENV_VARS"`; do
             # save to file
             echo "${!SECRET_ENV_VAR}" > "$SECRET_ENV_VAR.txt"
             # export hash of saved file as env variable
