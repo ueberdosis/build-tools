@@ -149,10 +149,10 @@ if [ $# -gt 0 ]; then
             echo "${!SECRET_ENV_VAR}" > "$SECRET_ENV_VAR.txt"
 
             # generate hash
-            SECRET_ENV_VAR_HASH=$(sha512sum $SECRET_ENV_VAR.txt | awk "{print $1}" | cut -c1-16)
+            SECRET_ENV_VAR_HASH=$(sha512sum "$SECRET_ENV_VAR.txt" | cut -c1-16)
 
             # export hash of saved file as env variable
-            echo "export ${SECRET_ENV_VAR}_HASH=$SECRET_ENV_VAR_HASH"
+            echo "export ${SECRET_ENV_VAR}_HASH=${SECRET_ENV_VAR_HASH}"
         done
 
     # ci wait-for
