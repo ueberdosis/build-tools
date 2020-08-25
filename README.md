@@ -213,6 +213,8 @@ deploy:
     - rsync -arz --progress src/ remote-host:/var/www/
 ```
 
+> The SSH_FINGERPRINT can be retrieved with `ssh-keyscan example.com`.
+
 ### ci secrets
 
 > The secrets command writes secrets stored in environment variables to text files and provides a checksum to use it with docker secrets.
