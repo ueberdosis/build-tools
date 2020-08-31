@@ -7,9 +7,12 @@ ENV SONAR_SCANNER_VERSION "4.3.0.2102"
 # Install essentials
 RUN apk add --no-cache \
     bash \
+    curl \
+    gettext \
     git \
-    openssl \
+    jq \
     openssh-client \
+    openssl \
     rsync \
     sshpass \
     unzip \
@@ -31,5 +34,9 @@ RUN apk add --no-cache \
     chmod a+x /usr/bin/sonar-scanner && \
     mv -fv /usr/src/sonar-scanner-${SONAR_SCANNER_VERSION}/lib/* /usr/lib && \
     rm -rf /usr/src/*
+
+# copy ci script
+ADD ./ci.sh /usr/local/bin/ci
+RUN chmod a+x /usr/local/bin/ci
 
 ENTRYPOINT []
