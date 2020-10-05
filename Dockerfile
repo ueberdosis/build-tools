@@ -2,7 +2,7 @@ FROM docker/compose:alpine-1.27.4
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
 ENV COMPOSE_INTERACTIVE_NO_CLI "true"
-ENV SONAR_SCANNER_VERSION "4.4.0.2170"
+ENV SONAR_SCANNER_VERSION "4.5.0.2216"
 
 # Install essentials
 RUN apk add --no-cache \
