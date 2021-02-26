@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  trivy:
+  build-tools:
     image: ueberdosis/build-tools:${VERSION:-latest}
     build:
       context: .
