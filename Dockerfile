@@ -2,7 +2,7 @@ FROM docker/compose:alpine-1.29.2
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
 ENV COMPOSE_INTERACTIVE_NO_CLI "true"
-ENV SONAR_SCANNER_VERSION "4.6.0.2311"
+ENV SONAR_SCANNER_VERSION "4.6.2.2472"
 
 # Install essentials
 RUN apk add --no-cache \
@@ -19,7 +19,7 @@ RUN apk add --no-cache \
     wget
 
 # Install Trivy
-COPY --from=aquasec/trivy:0.19.1 /usr/local/bin/trivy /usr/local/bin/trivy
+COPY --from=aquasec/trivy:0.19.2 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # Install SonarScanner
