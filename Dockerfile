@@ -27,7 +27,7 @@ ADD https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanne
 RUN apk add --no-cache \
     bash \
     nodejs \
-    openjdk8-jre \
+    openjdk11-jre \
     && \
     cd /usr/src && unzip sonar-scanner.zip && \
     mv -fv /usr/src/sonar-scanner-${SONAR_SCANNER_VERSION}/bin/sonar-scanner /usr/bin && \
