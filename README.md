@@ -72,6 +72,16 @@ sonarqube:
         -Dsonar.login=$SONAR_LOGIN
 ```
 
+## Contributing
+
+To release a new version on Docker Hub run:
+
+```bash
+export VERSION="0.42.0"
+docker-compose build
+docker-compose push
+```
+
 ## License
 
 GNU General Public License v3.0
