@@ -78,7 +78,7 @@ To release a new version on Docker Hub run:
 
 ```bash
 export VERSION="0.42.0"
-docker-compose build
+docker-compose build --pull
 docker-compose push
 ```
 
