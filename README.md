@@ -7,6 +7,7 @@ Docker image with useful CI/CD tools
 - bash
 - curl
 - Docker
+- Docker Buildx
 - Docker Compose
 - git
 - openssl
