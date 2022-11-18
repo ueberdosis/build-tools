@@ -19,9 +19,10 @@ RUN apk add --no-cache \
     wget
 
 # Install Docker Buildx
-RUN wget -O /usr/bin/docker-buildx \
+RUN mkdir -p /usr/local/libexec/docker/cli-plugins && \
+    wget -O /usr/local/libexec/docker/cli-plugins/docker-buildx \
     https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64 && \
-    chmod +x /usr/bin/docker-buildx
+    chmod +x /usr/local/libexec/docker/cli-plugins/docker-buildx
 
 # Install Trivy
 COPY --from=aquasec/trivy:0.29.0 /usr/local/bin/trivy /usr/local/bin/trivy
