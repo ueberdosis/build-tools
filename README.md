@@ -78,9 +78,17 @@ sonarqube:
 To release a new version on Docker Hub run:
 
 ```bash
-export VERSION="0.42.0"
-docker-compose build --pull
-docker-compose push
+export VERSION="0.59.0"
+
+# Init buildx
+docker buildx create --use
+
+# Build, tag and push
+docker buildx build \
+  --platform linux/amd64,linux/arm64/v8 \
+  --tag ueberdosis/build-tools:$VERSION \
+  --push \
+  .
 ```
 
 ## License
