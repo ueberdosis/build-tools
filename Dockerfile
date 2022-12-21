@@ -1,8 +1,7 @@
-FROM docker/compose:alpine-1.29.2
+FROM docker:20.10-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
 ENV COMPOSE_INTERACTIVE_NO_CLI "true"
-ENV BUILDX_VERSION "0.9.1"
 
 # Install essentials
 RUN apk add --no-cache \
@@ -17,12 +16,6 @@ RUN apk add --no-cache \
     sshpass \
     unzip \
     wget
-
-# Install Docker Buildx
-RUN mkdir -p /usr/local/libexec/docker/cli-plugins && \
-    wget -O /usr/local/libexec/docker/cli-plugins/docker-buildx \
-    https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64 && \
-    chmod +x /usr/local/libexec/docker/cli-plugins/docker-buildx
 
 # Install Trivy
 COPY --from=aquasec/trivy:0.29.0 /usr/local/bin/trivy /usr/local/bin/trivy
