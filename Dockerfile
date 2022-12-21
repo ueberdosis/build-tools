@@ -1,8 +1,6 @@
 FROM docker:20.10-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
-ENV COMPOSE_INTERACTIVE_NO_CLI "true"
-
 # Install essentials
 RUN apk add --no-cache \
     bash \
