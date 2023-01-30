@@ -12,7 +12,6 @@ Docker image with useful CI/CD tools
 - git
 - openssl
 - rsync
-- Sonnar Scanner
 - sshpass
 - trivy
 
@@ -44,33 +43,11 @@ container_scan:
     - schedule
   script:
     - |
-      trivy \
-        --quiet \
+      trivy --quiet image \
         --severity CRITICAL \
-        --auto-refresh \
         --ignore-unfixed \
         --exit-code 1 \
         registry.gitlab.com/your-repository-path/your-image-name:your-tag
-```
-
-### Run Sonar Scanner
-
-Make sure to add an `analysis` stage to your `stages`. Add a scheduled pipeline with the variable `SCHEDULE_ANALYSE` so it will be run on a regular basis. Store your credentials in the environment variables `SONAR_PROJECT_KEY`, `SONAR_HOST` and `SONAR_LOGIN` (**Settings → CI/CD → Variables**).
-
-```yaml
-sonarqube:
-  stage: analysis
-  only:
-    variables:
-      - $SCHEDULE_ANALYSE
-    refs:
-      - schedules
-  script:
-    - |
-      sonar-scanner \
-        -Dsonar.projectKey=$SONAR_PROJECT_KEY \
-        -Dsonar.host.url=$SONAR_HOST \
-        -Dsonar.login=$SONAR_LOGIN
 ```
 
 ## Contributing
