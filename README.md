@@ -11,6 +11,7 @@ Docker image with useful CI/CD tools
 - Docker Compose
 - git
 - openssl
+- regctl
 - rsync
 - sshpass
 - trivy

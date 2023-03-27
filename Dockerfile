@@ -1,6 +1,10 @@
 FROM docker:20.10-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
+ENV REGCLIENT_VERSION "0.4.7"
+
+ARG TARGETARCH
+
 # Install essentials
 RUN apk add --no-cache \
     bash \
@@ -14,6 +18,11 @@ RUN apk add --no-cache \
     sshpass \
     unzip \
     wget
+
+# Install regctl
+RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHITECTURE="linux-amd64"; fi && \
+    curl -o /usr/local/bin/regctl https://github.com/regclient/regclient/releases/download/v${REGCLIENT_VERSION}/regctl-${ARCHITECTURE} && \
+    chmod +x /usr/local/bin/regctl
 
 # Install Trivy
 COPY --from=aquasec/trivy:0.35.0 /usr/local/bin/trivy /usr/local/bin/trivy
