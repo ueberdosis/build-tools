@@ -21,7 +21,8 @@ RUN apk add --no-cache \
 
 # Install regctl
 RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHITECTURE="linux-amd64"; fi && \
-    curl -o /usr/local/bin/regctl https://github.com/regclient/regclient/releases/download/v${REGCLIENT_VERSION}/regctl-${ARCHITECTURE} && \
+    wget https://github.com/regclient/regclient/releases/download/v${REGCLIENT_VERSION}/regctl-${ARCHITECTURE} && \
+    mv regctl-${ARCHITECTURE} /usr/local/bin/regctl && \
     chmod +x /usr/local/bin/regctl
 
 # Install Trivy
