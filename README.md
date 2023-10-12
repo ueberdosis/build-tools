@@ -1,6 +1,6 @@
 # 🛠️ Build Tools
 
-Docker image with useful CI/CD tools
+Docker image with useful CI/CD tools optimized for use in GitLab CI pipelines.
 
 ## Tools included
 
@@ -22,10 +22,11 @@ Docker
 
 ## Getting started
 
-Include the image via the **image** keyword in your `.gitlab-ci.yml`:
+Include the image via the **default.image** keyword in your `.gitlab-ci.yml`:
 
 ```yaml
-image: ueberdosis/build-tools:0.63.0
+default:
+  image: ueberdosis/build-tools:0.63.0
 ```
 
 ## Usage examples
@@ -36,16 +37,10 @@ Adjust the image-name and tag after copying the command to your `.gitlab-ci.yml`
 
 ```yaml
 container_scan:
-  stage: test
-  cache:
-    paths:
-      - $HOME/.cache/trivy
-  except:
-    - schedule
   script:
     - |
-      trivy --quiet image \
-        --severity CRITICAL \
+      trivy image \
+        --severity HIGH,CRITICAL \
         --ignore-unfixed \
         --exit-code 1 \
         registry.gitlab.com/your-repository-path/your-image-name:your-tag
