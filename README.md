@@ -14,7 +14,7 @@ Docker image with useful CI/CD tools optimized for use in GitLab CI pipelines.
 - [regctl](https://github.com/regclient/regclient) (for advanced image handling)
 - rsync
 - [sshpass](https://www.redhat.com/sysadmin/ssh-automation-sshpass) (for SSH servers with password authentication)
-- [trivy](https://aquasecurity.github.io/trivy/v0.45/)
+- [trivy](https://aquasecurity.github.io/trivy/)
 
 ## Dependencies
 
@@ -47,7 +47,7 @@ build_app:
 
 ### Run trivy
 
-Adjust the image-name and tag after copying the command to your `.gitlab-ci.yml`. See [trivy documentation](https://aquasecurity.github.io/trivy/v0.45/docs/target/container_image/) for more details.
+Adjust the image-name and tag after copying the command to your `.gitlab-ci.yml`. See [trivy documentation](https://aquasecurity.github.io/trivy/latest/docs/target/container_image/) for more details.
 
 ```yaml
 container_scan:
