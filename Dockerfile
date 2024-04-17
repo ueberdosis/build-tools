@@ -26,7 +26,7 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHIT
     chmod +x /usr/local/bin/regctl
 
 # Install Trivy
-COPY --from=aquasec/trivy:0.45.1 /usr/local/bin/trivy /usr/local/bin/trivy
+COPY --from=aquasec/trivy:0.50.1 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # copy ci script
