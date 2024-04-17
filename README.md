@@ -26,7 +26,7 @@ Include the image via the **default.image** keyword in your `.gitlab-ci.yml`:
 
 ```yaml
 default:
-  image: ueberdosis/build-tools:0.63.0
+  image: ueberdosis/build-tools:0.64.0
 ```
 
 ## Usage examples
@@ -65,7 +65,7 @@ container_scan:
 To release a new version on Docker Hub run:
 
 ```bash
-export VERSION="0.63.0"
+export VERSION="0.64.0"
 
 # Init buildx
 docker buildx create --use
