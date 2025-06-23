@@ -1,7 +1,7 @@
-FROM docker:27.1-cli
+FROM docker:28.2-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
-ENV REGCLIENT_VERSION "0.7.0"
+ENV REGCLIENT_VERSION="0.8.3"
 
 ARG TARGETARCH
 
@@ -26,7 +26,7 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHIT
     chmod +x /usr/local/bin/regctl
 
 # Install Trivy
-COPY --from=aquasec/trivy:0.50.1 /usr/local/bin/trivy /usr/local/bin/trivy
+COPY --from=aquasec/trivy:0.63.0 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
 # copy ci script
