@@ -1,7 +1,7 @@
 FROM docker:28.5-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
-ENV REGCLIENT_VERSION="0.8.3"
+ENV REGCLIENT_VERSION="0.9.2"
 
 ARG TARGETARCH
 
