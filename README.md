@@ -4,6 +4,7 @@ Docker image with useful CI/CD tools optimized for use in GitLab CI pipelines.
 
 ## Tools included
 
+- [ansible-core](https://pypi.org/project/ansible-core/)
 - bash
 - curl
 - [Docker](https://docs.docker.com/engine/reference/commandline/cli/)
@@ -26,7 +27,7 @@ Include the image via the **default.image** keyword in your `.gitlab-ci.yml`:
 
 ```yaml
 default:
-  image: ueberdosis/build-tools:0.66.0
+  image: ueberdosis/build-tools:0.68.0
 ```
 
 ## Usage examples
@@ -65,7 +66,7 @@ container_scan:
 To release a new version on Docker Hub run:
 
 ```bash
-export VERSION="0.66.0"
+export VERSION="0.68.0"
 
 # Init buildx
 docker buildx create --use
