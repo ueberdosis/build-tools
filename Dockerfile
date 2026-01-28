@@ -17,7 +17,13 @@ RUN apk add --no-cache \
     rsync \
     sshpass \
     unzip \
-    wget
+    wget \
+    python3 \
+    py3-pip
+
+# Install Ansible
+RUN pip3 install --no-cache-dir --break-system-packages ansible-core && \
+    ansible --version
 
 # Install regctl
 RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHITECTURE="linux-amd64"; fi && \
