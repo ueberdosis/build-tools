@@ -29,8 +29,4 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then ARCHITECTURE="linux-arm64"; else ARCHIT
 COPY --from=aquasec/trivy:0.69.0 /usr/local/bin/trivy /usr/local/bin/trivy
 RUN chmod +x /usr/local/bin/trivy
 
-# copy ci script
-ADD ./ci.sh /usr/local/bin/ci
-RUN chmod a+x /usr/local/bin/ci
-
 ENTRYPOINT []
