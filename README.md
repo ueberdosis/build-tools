@@ -26,7 +26,7 @@ Include the image via the **default.image** keyword in your `.gitlab-ci.yml`:
 
 ```yaml
 default:
-  image: ueberdosis/build-tools:0.66.0
+  image: ueberdosis/build-tools:0.69.0
 ```
 
 ## Usage examples
@@ -38,11 +38,11 @@ Specify `COMPOSE_FILE` if different from the default: `docker-compose.yml`. See 
 ```yaml
 build_app:
   variables:
-    COMPOSE_FILE: docker-compose.build.yml
+    COMPOSE_FILE: compose.build.yml
   stage: build
   script:
-    - docker-compose build app
-    - docker-compose push app
+    - docker compose build app
+    - docker compose push app
 ```
 
 ### Run trivy
@@ -65,7 +65,7 @@ container_scan:
 To release a new version on Docker Hub run:
 
 ```bash
-export VERSION="0.66.0"
+export VERSION="0.69.0"
 
 # Init buildx
 docker buildx create --use
