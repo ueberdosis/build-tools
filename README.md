@@ -4,6 +4,7 @@ Docker image with useful CI/CD tools optimized for use in GitLab CI pipelines.
 
 ## Tools included
 
+- [ansible-core](https://pypi.org/project/ansible-core/)
 - bash
 - curl
 - [Docker](https://docs.docker.com/engine/reference/commandline/cli/)
