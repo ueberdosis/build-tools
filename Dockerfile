@@ -1,4 +1,4 @@
-FROM docker:28.2-cli
+FROM docker:29.2-cli
 LABEL maintainer="Patrick Baber <patrick.baber@ueber.io>"
 
 ENV REGCLIENT_VERSION="0.11.1"
