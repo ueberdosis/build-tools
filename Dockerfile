@@ -23,6 +23,7 @@ RUN apk add --no-cache \
 
 # Install Ansible
 RUN pip3 install --no-cache-dir --break-system-packages ansible-core && \
+    ansible-galaxy collection install community.docker && \
     ansible --version
 
 # Install regctl
